@@ -7,21 +7,9 @@ const session = require('express-session');
 const app = express();
 app.use(express.json()); // Built-in middleware to parse JSON bodies
 app.use(cors({
-    origin: (origin, callback) => {
-      const allowedOrigins = [
-        'http://localhost:3000', // React frontend or other UI
-        'http://localhost:51238', // Unity WebGL during development
-        'http://your-deployed-unity-site.com' // Unity WebGL deployment
-      ];
-  
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error('Not allowed by CORS'));
-      }
-    },
-    credentials: true, // Enable cookies/headers
-  }));
+    origin: '*', // Allow all origins
+    credentials: true,
+}));
 
 app.use(session({
   secret: 'superSecretString2024!@#$', // Replace with your generated secret
