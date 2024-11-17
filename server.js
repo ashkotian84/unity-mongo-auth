@@ -31,7 +31,7 @@ app.use(session({
 }));
 
 // MongoDB connection (ensure MongoDB is running locally or remotely)
-mongoose.connect('mongodb+srv://akotian:Ashkotian@10@unityproject.kyn1n.mongodb.net/?retryWrites=true&w=majority&appName=UnityProject')
+mongoose.connect('mongodb+srv://akotian:Ashkotian%4010@unityproject.kyn1n.mongodb.net/?retryWrites=true&w=majority&appName=UnityProject')
     .then(() => {
         console.log('Connected to MongoDB');
     })
